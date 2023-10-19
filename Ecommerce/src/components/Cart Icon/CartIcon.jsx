@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-//? All Imports
 import styles from "./CartIcon.module.css";
 
 import { BsFillBagHeartFill } from "react-icons/bs";
