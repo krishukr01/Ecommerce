@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  min-width: 100vw;
+  min-height: 100vh;
+}
