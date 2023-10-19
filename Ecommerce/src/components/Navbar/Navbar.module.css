@@ -1,3 +1,34 @@
-.nav_container{
-    border: 1px solid red;
+.navContainer {
+  height: 3.5rem;
+  width: 100vw;
+  display: flex;
+  gap: 3.5rem;
+  font-weight: bolder;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.link_container,
+.cart_container,
+.logo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_container {
+  padding-left: 5rem;
+}
+
+.cart_container {
+  margin-left: auto;
+  margin-right: 7rem;
+  gap: 1rem;
+}
+
+.link_container a,
+.cart_container a,
+.logo_container a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }
