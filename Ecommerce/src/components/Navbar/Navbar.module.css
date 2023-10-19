@@ -7,6 +7,10 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
+.dark_box_shadow {
+  box-shadow: rgba(250, 250, 250, 0.1) 0px 1px 2px 0px;
+}
+
 .link_container,
 .cart_container,
 .logo_container,
@@ -19,6 +23,8 @@
 .logo_container {
   height: 100%;
   margin-left: 5rem;
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 20px;
 }
 .logo_container img {
   height: 50px;

@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 import CartIcon from "../Cart Icon/CartIcon";
 
+import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 import { BiLogIn } from "react-icons/bi";
 import { useContext } from "react";
@@ -14,7 +14,11 @@ const Navbar = () => {
   const { isThemeDark, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className={styles.navContainer}>
+    <div
+      className={`${styles.navContainer} ${
+        isThemeDark ? styles.dark_box_shadow : null
+      }`}
+    >
       <div className={styles.logo_container}>
         <Link to="/">Men's Fashion</Link>
       </div>
