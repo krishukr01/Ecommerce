@@ -1,5 +1,14 @@
+import Navbar from "./components/Navbar/Navbar";
+import MainRoute from "./routes/MainRoute";
+
+
 function App() {
-  return <h1>App</h1>;
+  return (
+    <div>
+      <Navbar />
+      <MainRoute />
+    </div>
+  );
 }
 
 export default App;
