@@ -44,6 +44,7 @@
   color: hsl(353, 100%, 78%);
   transition: 0.4s ease;
   font-weight: bolder;
+  transform: scale(1.1);
 }
 
 .login_button {
@@ -54,4 +55,9 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.login_button:hover {
+  transform: scale(1.1);
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
@@ -7,7 +8,7 @@ const Navbar = () => {
   return (
     <div className={styles.navContainer}>
       <div className={styles.logo_container}>
-        <Link to="/">E-commerce</Link>
+        <Link to="/">Men's Fashion</Link>
       </div>
       <div className={styles.link_container}>
         <Link to="/products">Products</Link>
