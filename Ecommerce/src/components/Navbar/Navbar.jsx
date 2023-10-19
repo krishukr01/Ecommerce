@@ -17,9 +17,10 @@ const Navbar = () => {
           {" "}
           <CartIcon itemCount={1} />
         </Link>
-        <button className={styles.login_button}>
-          <Link to="/login">Login</Link>
-        </button>
+
+        <Link to="/login">
+          <button className={styles.login_button}>Login</button>
+        </Link>
       </div>
     </div>
   );
