@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
+import CartIcon from "../Cart Icon/CartIcon";
 
 const Navbar = () => {
   return (
@@ -14,7 +15,10 @@ const Navbar = () => {
       </div>
 
       <div className={styles.cart_container}>
-        <Link to="/cart"> {/* <CartIcon itemCount={cart.length} /> */}</Link>
+        <Link to="/cart">
+          {" "}
+          <CartIcon itemCount={1} />
+        </Link>
       </div>
     </div>
   );
