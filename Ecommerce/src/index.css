@@ -12,3 +12,14 @@ body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
 }
+
+.dark {
+  height: 100vh;
+  background-color: #1a202c;
+  color: #edf2f7;
+}
+.white {
+  height: 100vh;
+  color: #2e3648;
+  background-color: #ffffff;
+}

@@ -1,17 +1,17 @@
 .cart {
   position: relative;
   display: block;
-  width: 28px;
-  height: 28px;
+  width: 27px;
+  height: 25px;
   height: auto;
   overflow: hidden;
-  color: black;
+  /* color: black; */
 }
 .Icons {
   position: relative;
   top: 4px;
   z-index: 1;
-  font-size: 30px;
+  font-size: 27px;
 }
 
 .count {

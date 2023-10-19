@@ -9,7 +9,8 @@
 
 .link_container,
 .cart_container,
-.logo_container {
+.logo_container,
+.login_button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,9 +28,7 @@
 .cart_container {
   margin-left: auto;
   margin-right: 4rem;
-  gap: 1rem;
   width: max-content;
-  gap: 3rem;
 }
 
 .link_container a,
@@ -49,15 +48,15 @@
 
 .login_button {
   color: #fff;
-  background-color: #1f2937;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   transition: transform 0.2s;
+  font-size: 25px;
 }
 
 .login_button:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
