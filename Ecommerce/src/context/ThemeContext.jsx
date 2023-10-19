@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import { useState, createContext } from "react";
 
-export const ThemeContext = React.createContext();
+export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   const [isThemeDark, setIsThemeDark] = useState(false);
@@ -15,5 +15,6 @@ const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
 
 export default ThemeProvider;

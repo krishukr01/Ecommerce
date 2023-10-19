@@ -5,6 +5,8 @@
   gap: 3.5rem;
   font-weight: bolder;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  top: 0;
+  position: sticky;
 }
 
 .dark_box_shadow {
@@ -65,4 +67,5 @@
 
 .login_button:hover {
   transform: scale(1.2);
+  color: hsl(353, 100%, 78%);
 }

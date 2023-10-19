@@ -34,11 +34,7 @@ const Navbar = () => {
           <BiLogIn />
         </Link>
         {isThemeDark ? (
-          <MdDarkMode
-            onClick={toggleTheme}
-            style={{ color: "white" }}
-            className={styles.login_button}
-          />
+          <MdDarkMode onClick={toggleTheme} className={styles.login_button} />
         ) : (
           <CiDark
             onClick={toggleTheme}

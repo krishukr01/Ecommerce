@@ -14,12 +14,14 @@ body {
 }
 
 .dark {
-  height: 100vh;
+  height: max-content;
   background-color: #1a202c;
   color: #edf2f7;
+  border-color: #ccc;
 }
 .white {
-  height: 100vh;
+  height: max-content;
   color: #2e3648;
   background-color: #ffffff;
+  border-color: #ccc;
 }

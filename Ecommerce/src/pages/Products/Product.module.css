@@ -1,0 +1,21 @@
+.main_container {
+  height: 85.7vh;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.filter_container {
+  width: 25vw;
+  border-left: none;
+}
+
+.products_container {
+  width: 75vw;
+}
+
+.filter_container,
+.products_container {
+  height: 100%;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
