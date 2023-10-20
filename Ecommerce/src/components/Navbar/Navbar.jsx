@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.navContainer} ${
+      className={`${styles.nav_container} ${
         isThemeDark ? styles.dark_box_shadow : null
       }`}
     >

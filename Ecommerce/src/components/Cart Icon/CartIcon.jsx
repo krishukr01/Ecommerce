@@ -7,7 +7,7 @@ const CartIcon = ({ itemCount }) => {
   return (
     <main className={styles.cart}>
       <text className={styles.count}>{itemCount}</text>
-      <section className={styles.Icons}>
+      <section className={styles.icons}>
         <BsCart />
       </section>
     </main>

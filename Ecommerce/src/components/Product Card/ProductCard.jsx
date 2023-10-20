@@ -23,17 +23,17 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <main className={styles.productCard}>
-      <img className={styles.productImage} src={images[0]} alt={title} />
-      <h3 className={styles.productTitle}>{title}</h3>
-      <p className={styles.productPrice}>Price: {strike_price}₹</p>
-      <section className={styles.productRating}>
-        <span className={styles.ratingValue}>Reviews : {rating.rate}</span>
-        <span className={styles.ratingCount}>({rating.count} reviews)</span>
+    <main className={styles.product_card}>
+      <img className={styles.product_image} src={images[0]} alt={title} />
+      <h3 className={styles.product_title}>{title}</h3>
+      <p className={styles.product_price}>Price: {strike_price}₹</p>
+      <section className={styles.product_rating}>
+        <span className={styles.rating_value}>Reviews : {rating.rate}</span>
+        <span className={styles.rating_count}>({rating.count} reviews)</span>
       </section>
       <button
         onClick={() => handleAddToCart(product)}
-        className={styles.addToCartButton}
+        className={styles.add_to_cartButton}
       >
         <FaCartPlus className={styles.cartIcon} />
         Add to Cart
