@@ -12,11 +12,11 @@ import { CiDark } from "react-icons/ci";
 import { CartContext } from "../../context/CartContext";
 
 const Navbar = () => {
-  const { cartCount } = useContext(CartContext);
   const { isThemeDark, toggleTheme } = useContext(ThemeContext);
+  const { cartCount } = useContext(CartContext);
 
   return (
-    <div
+    <nav
       className={`${styles.navContainer} ${
         isThemeDark ? styles.dark_box_shadow : null
       }`}
@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className={styles.link_container}>
         <Link to="/products">Products</Link>
       </div>
-      <div className={styles.cart_container}>
+      <section className={styles.cart_container}>
         <Link className={styles.login_button} to="/cart">
           {" "}
           <CartIcon itemCount={cartCount} />
@@ -44,8 +44,8 @@ const Navbar = () => {
             className={styles.login_button}
           />
         )}
-      </div>
-    </div>
+      </section>
+    </nav>
   );
 };
 

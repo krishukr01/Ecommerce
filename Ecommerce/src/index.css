@@ -25,6 +25,3 @@ body {
   background-color: #ffffff;
   border-color: #ccc;
 }
-body::-webkit-scrollbar {
-  display: none;
-}

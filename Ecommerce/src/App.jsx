@@ -6,10 +6,10 @@ import { ThemeContext } from "./context/ThemeContext";
 function App() {
   const { isThemeDark } = useContext(ThemeContext);
   return (
-    <div className={isThemeDark ? "dark" : "white"}>
+    <main className={isThemeDark ? "dark" : "white"}>
       <Navbar />
       <MainRoute />
-    </div>
+    </main>
   );
 }
 

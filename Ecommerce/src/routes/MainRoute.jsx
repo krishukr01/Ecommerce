@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+
 import Cart from "../pages/Cart/Cart";
 import Products from "../pages/Products/Products";
 import Login from "../pages/Login/Login";
@@ -6,7 +7,7 @@ import RequireAuth from "../hoc/RequireAuth";
 import NotFound from "../pages/Not Found/NotFound";
 const MainRoute = () => {
   return (
-    <div>
+    <main>
       <Routes>
         <Route path="/" element={<Products />}></Route>
         <Route path="/products" element={<Products />}></Route>
@@ -21,7 +22,7 @@ const MainRoute = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-    </div>
+    </main>
   );
 };
 

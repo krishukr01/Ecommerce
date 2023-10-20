@@ -6,9 +6,9 @@ const Products = () => {
   const [data, isLoading] = useFetch("http://localhost:8080/MensData");
 
   return (
-    <div className={styles.main_container}>
-      <div className={styles.filter_container}></div>
-      <div className={styles.products_container}>
+    <main className={styles.main_container}>
+      <section className={styles.filter_container}></section>
+      <section className={styles.products_container}>
         {isLoading ? (
           <div className={styles.spinner_container}>
             <h2>Loading...</h2>
@@ -18,8 +18,8 @@ const Products = () => {
             <ProductCard key={index} product={data[index]} />
           ))
         ) : null}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
