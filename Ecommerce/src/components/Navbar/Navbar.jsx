@@ -9,8 +9,10 @@ import { BiLogIn } from "react-icons/bi";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { CiDark } from "react-icons/ci";
+import { CartContext } from "../../context/CartContext";
 
 const Navbar = () => {
+  const { cartCount } = useContext(CartContext);
   const { isThemeDark, toggleTheme } = useContext(ThemeContext);
 
   return (
@@ -28,7 +30,7 @@ const Navbar = () => {
       <div className={styles.cart_container}>
         <Link className={styles.login_button} to="/cart">
           {" "}
-          <CartIcon itemCount={10} />
+          <CartIcon itemCount={cartCount} />
         </Link>
         <Link className={styles.login_button} to="/login">
           <BiLogIn />

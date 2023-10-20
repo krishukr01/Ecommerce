@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import styles from "./Product.module.css";
 
 const Products = () => {
-  const [data, isLoading, isError] = useFetch("http://localhost:8080/MensData");
+  const [data] = useFetch("http://localhost:8080/MensData");
 
   return (
     <div className={styles.main_container}>

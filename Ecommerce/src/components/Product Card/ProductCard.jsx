@@ -1,20 +1,13 @@
 /* eslint-disable react/prop-types */
 
-import { FaCartPlus } from "react-icons/fa";
-
 import styles from "./ProductCard.module.css";
-import axios from "axios";
-const URL = "http://localhost:8080/Cart";
-const ProductCard = ({ product }) => {
-  const { title, strike_price, images, rating } = product;
 
-  const handleAddToCart = async (product) => {
-    try {
-      await axios.post(URL, product);
-    } catch (error) {
-      throw new Error("Adding to cart failed: " + error);
-    }
-  };
+import { FaCartPlus } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+const ProductCard = ({ product }) => {
+  const { handleAddToCart } = useContext(CartContext);
+  const { title, strike_price, images, rating } = product;
 
   return (
     <div className={styles.productCard}>
