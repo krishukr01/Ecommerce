@@ -1,7 +1,8 @@
 .main_container {
-  height: 85.7vh;
-  margin-top: 2rem;
+  height: 85.9vh;
+  margin-top: 3rem;
   display: flex;
+  position: fixed;
 }
 
 .filter_container {
@@ -9,17 +10,24 @@
   border-left: none;
 }
 
+.spinner_container {
+  width: 75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .products_container {
   width: 75vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   overflow: scroll;
-  gap: 1rem;
+  gap: 2rem;
   padding: 20px;
+  overflow-x: hidden;
 }
-
 .filter_container,
-.products_container {
+.products_container,
+.spinner_container {
   height: 100%;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
     rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
