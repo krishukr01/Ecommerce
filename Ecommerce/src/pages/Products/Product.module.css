@@ -11,6 +11,11 @@
 
 .products_container {
   width: 75vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: scroll;
+  gap: 1rem;
+  padding: 20px;
 }
 
 .filter_container,
