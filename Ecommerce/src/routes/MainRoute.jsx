@@ -5,6 +5,7 @@ import Products from "../pages/Products/Products";
 import Login from "../pages/Login/Login";
 import RequireAuth from "../hoc/RequireAuth";
 import NotFound from "../pages/Not Found/NotFound";
+
 const MainRoute = () => {
   return (
     <main>
