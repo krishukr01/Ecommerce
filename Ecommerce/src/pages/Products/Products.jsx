@@ -24,7 +24,7 @@ const Products = () => {
           </div>
         ) : data?.length > 0 ? (
           data.map((item, index) => (
-            <ProductCard key={index} product={data[index]} />
+            <ProductCard key={item.id} product={data[index]} />
           ))
         ) : null}
       </section>

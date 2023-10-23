@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 
 import styles from "./Navbar.module.css";
@@ -7,12 +8,10 @@ import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 import { BiLogIn } from "react-icons/bi";
 import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
 import { CiDark } from "react-icons/ci";
 import { CartContext } from "../../context/CartContext";
 
-const Navbar = () => {
-  const { isThemeDark, toggleTheme } = useContext(ThemeContext);
+const Navbar = ({ isThemeDark, toggleTheme }) => {
   const { cartCount } = useContext(CartContext);
 
   return (
