@@ -1,11 +1,17 @@
-import ProductCard from "../../components/Product Card/ProductCard";
 import styles from "./Product.module.css";
-import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-const URL = "http://localhost:8080/MensData";
-const Products = () => {
+
+import { useQuery } from "@tanstack/react-query";
+import { Loading } from "../../components/Loading/Loading";
+import { ProductCard } from "../../components/Product Card/ProductCard";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+
+export const Products = () => {
+  const { handleIncCartCount } = useContext(CartContext);
+
   const getData = async () => {
-    const response = await axios.get(URL);
+    const response = await axios.get("/MensData");
     return response.data;
   };
 
@@ -19,17 +25,17 @@ const Products = () => {
       <section className={styles.filter_container}></section>
       <section className={styles.products_container}>
         {isPending ? (
-          <div className={styles.spinner_container}>
-            <h2>Loading...</h2>
-          </div>
+          <Loading />
         ) : data?.length > 0 ? (
           data.map((item, index) => (
-            <ProductCard key={item.id} product={data[index]} />
+            <ProductCard
+              handleIncCartCount={handleIncCartCount}
+              key={item.id}
+              product={data[index]}
+            />
           ))
         ) : null}
       </section>
     </main>
   );
 };
-
-export default Products;

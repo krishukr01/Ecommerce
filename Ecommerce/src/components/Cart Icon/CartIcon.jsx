@@ -3,7 +3,7 @@ import styles from "./CartIcon.module.css";
 
 import { BsCart } from "react-icons/bs";
 
-const CartIcon = ({ itemCount }) => {
+export const CartIcon = ({ itemCount }) => {
   return (
     <main className={styles.cart}>
       <span className={styles.count}>{itemCount}</span>
@@ -13,5 +13,3 @@ const CartIcon = ({ itemCount }) => {
     </main>
   );
 };
-
-export default CartIcon;

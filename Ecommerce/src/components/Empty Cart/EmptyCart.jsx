@@ -1,7 +1,8 @@
 import styles from "./EmptyCart.module.css";
 
 import { Link } from "react-router-dom";
-const EmptyCart = () => {
+
+export const EmptyCart = () => {
   return (
     <main>
       <h1 className={styles.heading}>Shopping Cart</h1>
@@ -12,5 +13,3 @@ const EmptyCart = () => {
     </main>
   );
 };
-
-export { EmptyCart };

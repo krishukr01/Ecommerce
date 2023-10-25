@@ -1,19 +1,18 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { useEffect } from "react";
-import { useState, createContext } from "react";
+
+import { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
-const CartProvider = ({ children }) => {
+export const CartContextProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     const getInitialCartCount = async () => {
-      const res = await axios.get("http://localhost:8080/Cart");
+      const res = await axios.get("/Cart");
       setCartCount(res.data.length);
     };
-
     getInitialCartCount();
   }, []);
 
@@ -23,13 +22,16 @@ const CartProvider = ({ children }) => {
   const handleDecCartCount = () => {
     setCartCount((cartCount) => cartCount - 1);
   };
+
   return (
     <CartContext.Provider
-      value={{ handleIncCartCount, handleDecCartCount, cartCount }}
+      value={{
+        handleIncCartCount,
+        handleDecCartCount,
+        cartCount,
+      }}
     >
       {children}
     </CartContext.Provider>
   );
 };
-
-export default CartProvider;

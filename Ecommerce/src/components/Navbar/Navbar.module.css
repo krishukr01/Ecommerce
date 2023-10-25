@@ -55,6 +55,12 @@
 }
 
 .login_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_button {
   color: #fff;
   border: none;
   padding: 8px 15px;
