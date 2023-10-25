@@ -6,7 +6,7 @@ import styles from "./ProductCard.module.css";
 import { FaCartPlus } from "react-icons/fa";
 
 export const ProductCard = ({ product, handleIncCartCount }) => {
-  const { title, strike_price, images, rating } = product;
+  const { title, discounted_price, images, rating } = product;
 
   const handleAddToCart = async (product) => {
     try {
@@ -23,7 +23,7 @@ export const ProductCard = ({ product, handleIncCartCount }) => {
     <section className={styles.product_card}>
       <img className={styles.product_image} src={images[0]} alt={title} />
       <h3 className={styles.product_title}>{title}</h3>
-      <p className={styles.product_price}>Price: {strike_price}₹</p>
+      <p className={styles.product_price}>Price: {discounted_price}₹</p>
       <section className={styles.product_rating}>
         <span className={styles.rating_value}>Reviews : {rating.rate}</span>
         <span className={styles.rating_count}>({rating.count} reviews)</span>

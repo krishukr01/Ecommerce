@@ -21,33 +21,8 @@
   border-bottom: 1px solid #ccc;
 }
 
-.productImage {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  border-radius: 4px;
-  margin-right: 1rem;
-}
-
 .productDetails {
   flex: 1;
-}
-
-.productName {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.productPrice {
-  font-size: 0.875rem;
-  color: #888;
-}
-
-.removeButton {
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: red;
 }
 
 .checkoutButton {
