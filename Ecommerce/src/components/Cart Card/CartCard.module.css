@@ -4,6 +4,8 @@
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+  width: 100%;
 }
 .productImage {
   width: 5rem;
@@ -13,9 +15,6 @@
   margin-right: 1rem;
 }
 
-.productDetails {
-  flex: 1;
-}
 .productName {
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -31,4 +30,31 @@
   background: none;
   cursor: pointer;
   color: red;
+}
+
+.button {
+  all: unset;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button:disabled {
+  cursor: not-allowed;
+}
+.detailsContainer {
+  width: 60%;
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  height: 100%;
+}
+.quantityContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
 }
