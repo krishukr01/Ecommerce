@@ -11,6 +11,7 @@ import { Cart } from "../src/pages/Cart/Cart";
 import { Login } from "./pages/Login/Login";
 import { Layout } from "./Layout/Layout";
 import { NotFound } from "../src/pages/Not Found/NotFound";
+import { cartLoader } from "./helpers/cartLoader";
 
 axios.defaults.baseURL = "http://localhost:8080";
 
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+        loader: cartLoader,
       },
       {
         path: "login",
