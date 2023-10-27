@@ -1,5 +1,6 @@
 import styles from "./Cart.module.css";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 import { CartCard } from "../../components/Cart Card/CartCard";
 import { useLoaderData, useRevalidator } from "react-router";
@@ -7,14 +8,11 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { INC } from "../../constants";
-import Swal from "sweetalert2";
-// import withReactContent from "sweetalert2-react-content";
 
 export const Cart = () => {
   const data = useLoaderData();
   const { revalidate } = useRevalidator();
   const { handleDecCartCount } = useContext(CartContext);
-  // const MySwal = withReactContent(Swal);
 
   const [dataObj, setDataObj] = useState(
     data.map((item) => ({
@@ -58,35 +56,40 @@ export const Cart = () => {
   };
 
   const handleCheckout = () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You want to checkout",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          "Order Placed",
-          "Your order is placed successfully.",
-          "success",
-        );
-      }
-    });
+    if (data.length) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You want to checkout",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          for (let i = 0; i < data.length; i++) {
+            handleDeleteFromCart(data[i].id);
+          }
+          Swal.fire(
+            "Order Placed",
+            "Your order is placed successfully.",
+            "success",
+          );
+        }
+      });
+    }
   };
 
   return (
     <main className={styles.container}>
       <section>
-        {data.map((item, index) => (
+        {data.map((product, index) => (
           <CartCard
             handleDeleteFromCart={handleDeleteFromCart}
             handleQuantityChange={handleQuantityChange}
             quantity={dataObj[index]?.quantity}
-            product={item}
-            key={item.id}
+            product={product}
+            key={product.id}
           />
         ))}
         <section className={styles.product}>

@@ -2,9 +2,9 @@
 
 import axios from "axios";
 import styles from "./ProductCard.module.css";
+import Swal from "sweetalert2";
 
 import { FaCartPlus } from "react-icons/fa";
-import Swal from "sweetalert2";
 export const ProductCard = ({ product, handleIncCartCount }) => {
   const { title, discounted_price, images, rating } = product;
 
