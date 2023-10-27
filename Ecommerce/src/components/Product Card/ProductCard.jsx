@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "./ProductCard.module.css";
 
 import { FaCartPlus } from "react-icons/fa";
-
+import Swal from "sweetalert2";
 export const ProductCard = ({ product, handleIncCartCount }) => {
   const { title, discounted_price, images, rating } = product;
 
@@ -15,7 +15,13 @@ export const ProductCard = ({ product, handleIncCartCount }) => {
         handleIncCartCount();
       }
     } catch (error) {
-      alert("Item already in cart");
+      Swal.fire({
+        position: "top-center",
+        icon: "warning",
+        title: "Product already in cart",
+        showConfirmButton: false,
+        timer: 1000,
+      });
     }
   };
 

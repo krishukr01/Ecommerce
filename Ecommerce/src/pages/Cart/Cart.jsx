@@ -7,11 +7,14 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { INC } from "../../constants";
+import Swal from "sweetalert2";
+// import withReactContent from "sweetalert2-react-content";
 
 export const Cart = () => {
   const data = useLoaderData();
   const { revalidate } = useRevalidator();
   const { handleDecCartCount } = useContext(CartContext);
+  // const MySwal = withReactContent(Swal);
 
   const [dataObj, setDataObj] = useState(
     data.map((item) => ({
@@ -54,6 +57,26 @@ export const Cart = () => {
     }
   };
 
+  const handleCheckout = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to checkout",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          "Order Placed",
+          "Your order is placed successfully.",
+          "success",
+        );
+      }
+    });
+  };
+
   return (
     <main className={styles.container}>
       <section>
@@ -78,7 +101,9 @@ export const Cart = () => {
           </section>
         </section>
       </section>
-      <button className={styles.checkoutButton}>Checkout</button>
+      <button onClick={handleCheckout} className={styles.checkoutButton}>
+        Checkout
+      </button>
     </main>
   );
 };
