@@ -6,7 +6,7 @@ import { BsCart } from "react-icons/bs";
 export const CartIcon = ({ itemCount }) => {
   return (
     <main className={styles.cart}>
-      <span className={styles.count}>{itemCount}</span>
+      {itemCount > 0 && <span className={styles.count}>{itemCount}</span>}
       <section className={styles.icons}>
         <BsCart />
       </section>
