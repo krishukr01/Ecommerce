@@ -8,13 +8,25 @@ export const Login = () => {
         <form className={styles.formContainer}>
           <div className={styles.formGroup}>
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" className={styles.input} />
+            <input
+              name="username"
+              type="text"
+              id="username"
+              className={styles.input}
+            />
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" className={styles.input} />
+            <input
+              name="password"
+              type="password"
+              id="password"
+              className={styles.input}
+            />
           </div>
-          <button className={styles.submitButton}>Login</button>
+          <button type="submit" className={styles.submitButton}>
+            Login
+          </button>
         </form>
       </div>
     </section>

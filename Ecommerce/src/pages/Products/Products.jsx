@@ -15,7 +15,7 @@ export const Products = () => {
     return response.data;
   };
 
-  const { isPending, data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ["productsData"],
     queryFn: getData,
   });
@@ -24,9 +24,9 @@ export const Products = () => {
     <main className={styles.main_container}>
       <section className={styles.filter_container}></section>
       <section className={styles.products_container}>
-        {isPending ? (
+        {isLoading ? (
           <Loading />
-        ) : data?.length > 0 ? (
+        ) : data.length > 0 ? (
           data.map((item, index) => (
             <ProductCard
               handleIncCartCount={handleIncCartCount}

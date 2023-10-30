@@ -10,6 +10,7 @@ export const Layout = () => {
     () => localStorage.getItem(THEME) === DARK,
   );
 
+  
   const toggleTheme = () => {
     localStorage.setItem(THEME, isThemeDark ? LIGHT : DARK);
     setIsThemeDark(!isThemeDark);
