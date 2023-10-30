@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import styles from "./NotFound.module.css";
+
+import { Link } from "react-router-dom";
 export const NotFound = () => {
   return (
     <main className={styles.container}>
