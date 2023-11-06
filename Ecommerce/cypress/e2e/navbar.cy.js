@@ -3,28 +3,32 @@ describe("Navbar", () => {
     cy.visit("http://localhost:5173");
   });
 
-  it("navbar should be exist", () => {
-    cy.getByData("navbar").should("exist");
+  const navbar = () => cy.getByData("navbar");
+  const mainContainer = () => cy.getByData("main-container");
+
+  const clickNavLinkAndVerifyPath = (index, path) => {
+    navbar().should("exist").find("a").eq(index).click();
+    cy.location("pathname").should("eq", path);
+  };
+
+  it("navbar should exist", () => {
+    navbar().should("exist");
   });
 
-  it("link should work correctly and page should change be accordingly", () => {
-    // todo : how to avoid code  repetition here
-    cy.getByData("navbar").should("exist").find("a").eq(0).click();
-    cy.location("pathname").should("eq", "/");
-    cy.getByData("navbar").should("exist").find("a").eq(1).click();
-    cy.location("pathname").should("eq", "/products");
-    cy.getByData("navbar").should("exist").find("a").eq(2).click();
-    cy.location("pathname").should("eq", "/cart");
-    cy.getByData("navbar").should("exist").find("a").eq(3).click();
-    cy.location("pathname").should("eq", "/login");
+  it("link should work correctly and page should change accordingly", () => {
+    clickNavLinkAndVerifyPath(0, "/");
+    clickNavLinkAndVerifyPath(1, "/products");
+    clickNavLinkAndVerifyPath(2, "/cart");
+    clickNavLinkAndVerifyPath(3, "/login");
   });
 
   it("able to toggle theme and current theme should not change after refresh", () => {
-    cy.getByData("navbar").should("exist").find("a").eq(4).click();
-    cy.getByData("main-container").should("have.class", "dark");
+    navbar().should("exist");
+    navbar().find("a").eq(4).click();
+    mainContainer().should("have.class", "dark");
     cy.reload();
-    cy.getByData("main-container").should("have.class", "dark");
-    cy.getByData("navbar").should("exist").find("a").eq(4).click();
-    cy.getByData("main-container").should("have.class", "light");
+    mainContainer().should("have.class", "dark");
+    navbar().find("a").eq(4).click();
+    mainContainer().should("have.class", "light");
   });
 });
