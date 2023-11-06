@@ -10,14 +10,13 @@ export const Layout = () => {
     () => localStorage.getItem(THEME) === DARK,
   );
 
-  
   const toggleTheme = () => {
     localStorage.setItem(THEME, isThemeDark ? LIGHT : DARK);
     setIsThemeDark(!isThemeDark);
   };
 
   return (
-    <main className={isThemeDark ? DARK : LIGHT}>
+    <main data-test="main-container" className={isThemeDark ? DARK : LIGHT}>
       <Navbar isThemeDark={isThemeDark} toggleTheme={toggleTheme} />
       <Outlet />
     </main>

@@ -8,4 +8,3 @@ export const cartLoader = async () => {
     throw new Error("Error getting cart data");
   }
 };
-

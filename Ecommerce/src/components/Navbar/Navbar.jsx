@@ -13,6 +13,7 @@ export const Navbar = ({ isThemeDark, toggleTheme }) => {
   const { cartCount } = useContext(CartContext);
   return (
     <nav
+      data-test="navbar"
       className={`${styles.nav_container} ${
         isThemeDark ? styles.dark_box_shadow : null
       }`}
@@ -31,7 +32,9 @@ export const Navbar = ({ isThemeDark, toggleTheme }) => {
         <Link className={styles.login_button} to="/login">
           <BiLogIn />
         </Link>
-        <ThemeIcon isThemeDark={isThemeDark} toggleTheme={toggleTheme} />
+        <Link>
+          <ThemeIcon isThemeDark={isThemeDark} toggleTheme={toggleTheme} />
+        </Link>
       </section>
     </nav>
   );

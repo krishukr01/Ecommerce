@@ -17,4 +17,11 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  globals: {
+    beforeEach: true,
+    Cypress: true,
+    it: true,
+    describe: true,
+    cy: true,
+  },
 };
