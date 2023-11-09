@@ -1,6 +1,6 @@
 describe("Navbar", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173");
+    cy.visit("/");
   });
 
   const navbar = () => cy.getByData("navbar");
@@ -23,7 +23,6 @@ describe("Navbar", () => {
   });
 
   it("able to toggle theme and current theme should not change after refresh", () => {
-    navbar().should("exist");
     navbar().find("a").eq(4).click();
     mainContainer().should("have.class", "dark");
     cy.reload();

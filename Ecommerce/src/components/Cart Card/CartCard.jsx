@@ -14,7 +14,7 @@ export const CartCard = ({
   const finalPrice = discounted_price * quantity;
 
   return (
-    <section className={styles.product}>
+    <section data-test="cart" className={styles.product}>
       <section className={styles.detailsContainer}>
         <section>
           <img

@@ -82,7 +82,7 @@ export const Cart = () => {
 
   return (
     <main className={styles.container}>
-      <section>
+      <section data-test="cart_container">
         {data.map((product, index) => (
           <CartCard
             handleDeleteFromCart={handleDeleteFromCart}

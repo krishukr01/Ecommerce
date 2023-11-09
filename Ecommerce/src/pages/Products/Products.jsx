@@ -23,7 +23,10 @@ export const Products = () => {
   return (
     <main className={styles.main_container}>
       <section className={styles.filter_container}></section>
-      <section className={styles.products_container}>
+      <section
+        data-test="products_container"
+        className={styles.products_container}
+      >
         {isLoading ? (
           <Loading />
         ) : data.length > 0 ? (

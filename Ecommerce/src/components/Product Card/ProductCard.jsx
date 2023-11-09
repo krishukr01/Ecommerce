@@ -26,7 +26,7 @@ export const ProductCard = ({ product, handleIncCartCount }) => {
   };
 
   return (
-    <section className={styles.product_card}>
+    <section data-test="product_card" className={styles.product_card}>
       <img className={styles.product_image} src={images[0]} alt={title} />
       <h3 className={styles.product_title}>{title}</h3>
       <p className={styles.product_price}>Price: {discounted_price}₹</p>
@@ -35,6 +35,7 @@ export const ProductCard = ({ product, handleIncCartCount }) => {
         <span className={styles.rating_count}>({rating.count} reviews)</span>
       </section>
       <button
+        data-test="add_to_cart_button"
         onClick={() => handleAddToCart(product)}
         className={styles.add_to_cartButton}
       >
