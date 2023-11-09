@@ -1,9 +1,16 @@
+import "cypress-map";
+
 describe("product page", () => {
   const clearPrevCart = () => {
     cy.visit("/cart");
-    cy.get("[data-test=cart_container]").find("[data-test=cart]");
+    cy.get("[data-test=cart_container]")
+      .find("[data-test=cart]")
+      .each(($cartItem) => {
+        cy.wrap($cartItem).find("[data-test=delete_button]").click();
+      });
     cy.visit("/products");
   };
+
   beforeEach(() => {
     cy.visit("/products");
   });
@@ -31,6 +38,7 @@ describe("product page", () => {
     AddToCartAndVerifyCount(1);
     AddToCartAndVerifyCount(2);
     AddToCartAndVerifyCount(3);
+    AddToCartAndVerifyCount(4);
     clearPrevCart();
   });
 });

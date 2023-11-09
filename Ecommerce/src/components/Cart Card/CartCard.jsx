@@ -45,6 +45,7 @@ export const CartCard = ({
         </button>
       </section>
       <button
+        data-test="delete_button"
         onClick={() => handleDeleteFromCart(product.id)}
         className={styles.removeButton}
       >
